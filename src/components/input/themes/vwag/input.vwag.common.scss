@@ -1,0 +1,245 @@
+@import '../input.common';
+
+:host {
+  line-height: vwag(line-height);
+  letter-spacing: vwag(letter-spacing);
+  width: 100%;
+  font-family: vwag(font-family);
+
+  #label {
+    margin-bottom: vwag(spacing-2);
+  }
+
+  ::slotted([slot='label']) {
+    position: relative;
+    font-weight: bold;
+    font-size: toRem(14);
+    display: flex;
+    align-items: center;
+    transition: transform 0.25s;
+    cursor: default;
+  }
+
+  div {
+    position: relative;
+  }
+
+  input {
+    position: relative;
+    line-height: vwag(line-height);
+    letter-spacing: vwag(letter-spacing);
+    font-family: vwag(font-family);
+    border-radius: vwag(border-radius);
+    outline: none;
+    display: flex;
+    resize: none;
+    margin: 0;
+    box-sizing: border-box;
+    width: 100%;
+
+    &.no-bottom-border-radius {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      opacity: 0;
+    }
+  }
+
+  #description {
+    flex-basis: 100%;
+  }
+
+  #typing-info {
+    white-space: nowrap;
+  }
+
+  ::slotted([slot='description']), #typing-info {
+    display: flex;
+    align-items: center;
+    font-size: toRem(14);
+    cursor: default;
+  }
+
+  #info {
+    display: flex;
+    align-items: flex-start;
+    gap: vwag(spacing-7);
+    margin-top: vwag(spacing-2);
+  }
+}
+
+:host([disabled=""]) {
+  input {
+    cursor: not-allowed;
+    pointer-events: auto;
+    box-shadow: none;
+  }
+}
+
+:host([inverted=""][disabled=""]) {
+  input {
+    box-shadow: none;
+  }
+}
+
+:host {
+  #input-wrapper {
+    position: relative;
+  }
+
+  #input-wrapper > groupui-icon.icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: vwag-color(petrol-800-primary);
+    pointer-events: none;
+  }
+
+  #input-wrapper > groupui-icon.status-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: vwag-color(petrol-800-primary);
+    pointer-events: none;
+    right: vwag(spacing-4);
+  }
+
+  #input-wrapper > groupui-icon.clear-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    color: vwag-color(petrol-800-primary);
+    right: vwag(spacing-4);
+    cursor: pointer;
+  }
+}
+
+:host([icon][icon-position="left"]) {
+  input {
+    padding-left: vwag(spacing-9);
+  }
+
+  #input-wrapper > groupui-icon.icon {
+    left: vwag(spacing-4);
+  }
+}
+
+:host([icon][icon-position="right"]) {
+  input {
+    padding-right: vwag(spacing-9);
+  }
+
+  #input-wrapper > groupui-icon.icon {
+    right: vwag(spacing-4);
+  }
+}
+
+:host(:not([icon])[show-clear-icon=""]) {
+  input {
+    padding-right: vwag(spacing-9);
+  }
+  #input-wrapper > groupui-icon.clear-icon {
+    right: vwag(spacing-4);
+  }
+}
+
+:host([icon][icon-position="right"][show-clear-icon=""]) {
+  #input-wrapper > groupui-icon.clear-icon {
+    right: vwag(spacing-9);
+  }
+  input {
+    padding-right: vwag(spacing-12);
+  }
+}
+
+:host([icon][icon-position="left"][show-clear-icon=""]) {
+  input {
+    padding-right: vwag(spacing-9);
+  }
+  #input-wrapper > groupui-icon.clear-icon {
+    right: vwag(spacing-4);
+  }
+}
+
+//no icon && status icon
+:host(:not([icon])[show-status-icon=""][severity="success"]),
+:host(:not([icon])[show-status-icon=""][severity="warning"]),
+:host(:not([icon])[show-status-icon=""][severity="danger"]){
+  input {
+    padding-right: vwag(spacing-9);
+  }
+  #input-wrapper > groupui-icon.status-icon {
+    right: vwag(spacing-4);
+  }
+}
+
+//icon left && status icon
+:host([icon][show-status-icon=""][icon-position="left"][severity="success"]),
+:host([icon][show-status-icon=""][icon-position="left"][severity="warning"]),
+:host([icon][show-status-icon=""][icon-position="left"][severity="danger"]){
+  input {
+    padding-right: vwag(spacing-9);
+  }
+  #input-wrapper > groupui-icon.status-icon {
+    right: vwag(spacing-4);
+  }
+}
+
+//icon right && status icon
+:host([icon][show-status-icon=""][icon-position="right"][severity="success"]),
+:host([icon][show-status-icon=""][icon-position="right"][severity="warning"]),
+:host([icon][show-status-icon=""][icon-position="right"][severity="danger"]){
+  input {
+    padding-right: vwag(spacing-12);
+  }
+  #input-wrapper > groupui-icon.status-icon {
+    right: vwag(spacing-9);
+  }
+}
+
+//no icon && status icon && clear icon
+:host(:not([icon])[show-status-icon=""][severity="success"][show-clear-icon=""]),
+:host(:not([icon])[show-status-icon=""][severity="warning"][show-clear-icon=""]),
+:host(:not([icon])[show-status-icon=""][severity="danger"][show-clear-icon=""]){
+  input {
+    padding-right: vwag(spacing-12);
+  }
+  #input-wrapper > groupui-icon.clean-icon {
+    right: vwag(spacing-4);
+  }
+  #input-wrapper > groupui-icon.status-icon {
+    right: vwag(spacing-9);
+  }
+}
+
+//icon left && status icon && clear icon
+:host([icon][show-status-icon=""][icon-position="left"][severity="success"][show-clear-icon=""]),
+:host([icon][show-status-icon=""][icon-position="left"][severity="warning"][show-clear-icon=""]),
+:host([icon][show-status-icon=""][icon-position="left"][severity="danger"][show-clear-icon=""]){
+  input {
+    padding-right: vwag(spacing-12);
+  }
+  #input-wrapper > groupui-icon.clean-icon {
+    right: vwag(spacing-4);
+  }
+  #input-wrapper > groupui-icon.status-icon {
+    right: vwag(spacing-9);
+  }
+}
+
+//icon right && status icon && clear icon
+:host([icon][show-status-icon=""][icon-position="right"][severity="success"][show-clear-icon=""]),
+:host([icon][show-status-icon=""][icon-position="right"][severity="warning"][show-clear-icon=""]),
+:host([icon][show-status-icon=""][icon-position="right"][severity="danger"][show-clear-icon=""]){
+  input {
+    padding-right: vwag(spacing-13);
+  }
+  #input-wrapper > groupui-icon.clean-icon {
+    right: vwag(spacing-9);
+  }
+  #input-wrapper > groupui-icon.status-icon {
+    right: 4.1rem;
+  }
+}

@@ -1,0 +1,74 @@
+@mixin common-vwag-button-base {
+  line-height: toRem(24);
+  letter-spacing: vwag(letter-spacing-large);
+  font-family: vwag(font-family);
+  outline: none;
+  border-radius: vwag(border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  padding: vwag(spacing-3) vwag(spacing-7);
+  text-decoration: none;
+}
+
+@mixin common-vwag-button-primary {
+  &:hover,
+  &:active {
+    transition: all 160ms ease-in-out;
+  }
+}
+
+@mixin common-vwag-button-primary-danger {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-primary-success {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-primary-warning {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-secondary {
+  @include common-vwag-button-tertiary;
+}
+
+@mixin common-vwag-button-secondary-danger {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-secondary-success {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-secondary-warning {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-tertiary {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-tertiary-danger {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-tertiary-success {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-tertiary-warning {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-inverted {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-inverted-tertiary {
+  @include common-vwag-button-primary;
+}
+
+@mixin common-vwag-button-inverted-secondary {
+  @include common-vwag-button-primary;
+}

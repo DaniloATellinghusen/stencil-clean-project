@@ -1,0 +1,36 @@
+@import '_variables';
+@import '../../functions';
+
+:root {
+  @each $key, $value in $vwag-vars {
+    #{--groupui-vwag-#{$key}}: $value
+  }
+  @each $key, $value in $vwag-spacings {
+    #{--groupui-#{$key}}: $value
+  }
+  @each $key, $value in $vwag-font-sizes {
+    #{--groupui-vwag-#{$key}}: $value
+  }
+  @each $key, $value in $vwag-spacings-flex-small {
+    #{--groupui-#{$key}}: $value
+  }
+  @each $key, $value in $vwag-spacings-flex-medium {
+    @media (min-width: map-deep-get($vwag-breakpoints, l, breakpoint)) {
+      #{--groupui-#{$key}}: $value
+    }
+  }
+  @each $key, $value in $vwag-spacings-flex-large {
+    @media (min-width: map-deep-get($vwag-breakpoints, xxl, breakpoint)) {
+      #{--groupui-#{$key}}: $value
+    }
+  }
+  @each $key, $value in $vwag-colors {
+    #{--groupui-vwag-color-#{$key}}: $value
+  }
+  @each $key, $value in $vwag-elevations {
+    #{--groupui-vwag-elevation-#{$key}}: $value
+  }
+  @each $key, $value in $vwag-breakpoints {
+    #{--groupui-vwag-breakpoint-#{$key}}: map-deep-get($vwag-breakpoints, $key, breakpoint)
+  }
+}

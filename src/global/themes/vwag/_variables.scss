@@ -1,0 +1,318 @@
+$groupui-spacing-unit: 1rem;
+
+$vwag-vars: (
+        font-family: ("GroupUI", sans-serif),
+        font-family-serif: ("GroupUISerif", serif),
+        line-height: 1.5,
+        border-radius: 0.125rem,
+        border-width: 0.0625rem,
+        border: 0.0625rem solid,
+        letter-spacing: 0.0125rem,
+        letter-spacing-large: 0.0375rem
+);
+
+$vwag-spacings: (
+        spacing-1: 0.125 * $groupui-spacing-unit,
+        spacing-2: 0.25 * $groupui-spacing-unit,
+        spacing-3: 0.5 * $groupui-spacing-unit,
+        spacing-4: 0.75 * $groupui-spacing-unit,
+        spacing-5: 1 * $groupui-spacing-unit,
+        spacing-6: 1.25 * $groupui-spacing-unit,
+        spacing-7: 1.5 * $groupui-spacing-unit,
+        spacing-8: 2 * $groupui-spacing-unit,
+        spacing-9: 2.5 * $groupui-spacing-unit,
+        spacing-10: 3 * $groupui-spacing-unit,
+        spacing-11: 3.5 * $groupui-spacing-unit,
+        spacing-12: 4.5 * $groupui-spacing-unit,
+        spacing-13: 6 * $groupui-spacing-unit,
+);
+
+$vwag-font-sizes: (
+        font-size-body-1: 16px,
+        font-size-body-2: 14px,
+        font-size-caption: 12px,
+        font-size-label: 12px,
+);
+
+$vwag-spacings-flex-small: (
+        spacing-flex-1: 0.125rem,
+        spacing-flex-2: 0.25rem,
+        spacing-flex-3: 0.5rem,
+        spacing-flex-4: 0.75rem,
+        spacing-flex-5: 1rem,
+        spacing-flex-6: 1.25rem,
+        spacing-flex-7: 1.5rem,
+        spacing-flex-8: 2rem,
+        spacing-flex-9: 2.5rem,
+        spacing-flex-10: 3rem,
+        spacing-flex-11: 3.5rem,
+        spacing-flex-12: 4.5rem,
+        spacing-flex-13: 6rem,
+);
+
+$vwag-spacings-flex-medium: (
+        spacing-flex-1: 0.25rem,
+        spacing-flex-2: 0.375rem,
+        spacing-flex-3: 0.75rem,
+        spacing-flex-4: 1rem,
+        spacing-flex-5: 1.25rem,
+        spacing-flex-6: 1.5rem,
+        spacing-flex-7: 2rem,
+        spacing-flex-8: 2.5rem,
+        spacing-flex-9: 3rem,
+        spacing-flex-10: 3.5rem,
+        spacing-flex-11: 4.5rem,
+        spacing-flex-12: 6rem,
+        spacing-flex-13: 7rem,
+);
+
+$vwag-spacings-flex-large: (
+        spacing-flex-1: 0.375rem,
+        spacing-flex-2: 0.5rem,
+        spacing-flex-3: 1rem,
+        spacing-flex-4: 1.25rem,
+        spacing-flex-5: 1.5rem,
+        spacing-flex-6: 2rem,
+        spacing-flex-7: 2.5rem,
+        spacing-flex-8: 3rem,
+        spacing-flex-9: 3.5rem,
+        spacing-flex-10: 4.5rem,
+        spacing-flex-11: 6rem,
+        spacing-flex-12: 7rem,
+        spacing-flex-13: 8.5rem,
+);
+
+$vwag-elevations: (
+        level-0: none,
+        level-1: none,
+        level-4: 0 0.125rem 0.25rem 0.063rem rgba(0, 0, 0, 0.24),
+        level-8: 0 0.25rem 0.5rem 0.063rem rgba(0, 0, 0, 0.24),
+        level-16: 0 0.5rem 1rem 0.063rem rgba(0, 0, 0, 0.24),
+        level-24: 0 1rem 1.5rem 0.063rem rgba(0, 0, 0, 0.24),
+);
+
+$vwag-colors: (
+        white: #ffffff,
+        black: #000000,
+        petrol-1000: #00354D,
+        petrol-900: #004666,
+        petrol-800-primary: #20607e,
+        petrol-700: #35718E,
+        petrol-600: #4A849F,
+        petrol-500: #5F95AF,
+        petrol-400-secondary: #80B0C8,
+        petrol-300: #A4C8D8,
+        petrol-200-tertiary: #C6DFE7,
+        petrol-100: #EAF4F7,
+        grey-1000: #1B1E1F,
+        grey-950: #282C2D,
+        grey-900: #34393B,
+        grey-800-primary: #4C5356,
+        grey-700: #636A6D,
+        grey-600: #7A8084,
+        grey-500: #91979C,
+        grey-400-secondary: #A8ADB3,
+        grey-300: #CACDD2,
+        grey-200-tertiary: #DFE2E6,
+        grey-100: #F0F1F2,
+        green-1000: #68752F,
+        green-900: #7F8F3A,
+        green-800-primary: #95A844,
+        green-700: #A2B25B,
+        green-600: #AFBD72,
+        green-500: #BDC88A,
+        green-400-secondary: #CAD3A1,
+        green-300: #DAE1BE,
+        green-200-tertiary: #EAEEDA,
+        green-100: #F5F7EB,
+        orange-1000: #A68200,
+        orange-900: #BE9500,
+        orange-800-primary: #D8AA00,
+        orange-700: #DDB420,
+        orange-600: #E2BF40,
+        orange-500: #E6C95F,
+        orange-400-secondary: #EBD47F,
+        orange-300: #EFDC99,
+        orange-200-tertiary: #F3E5B2,
+        orange-100: #FFF7DB,
+        red-1000: #5F1939,
+        red-900: #801B42,
+        red-800-primary: #A21E4D,
+        red-700: #AA325C,
+        red-600: #B2466B,
+        red-500: #BA5A79,
+        red-400-secondary: #C26D88,
+        red-300: #D69DAF,
+        red-200-tertiary: #EBCED7,
+        red-100: #F7EBEF,
+        signal-green-1000: #46752F,
+        signal-green-900: #558F3A,
+        signal-green-800-primary: #64A844,
+        signal-green-700: #7AB55E,
+        signal-green-600: #8DC076,
+        signal-green-500: #A2CB8E,
+        signal-green-400-secondary: #B5D6A5,
+        signal-green-300: #C8E1BC,
+        signal-green-200-tertiary: #DDEDD5,
+        signal-green-100: #EFF7EB,
+        signal-orange-1000: #BF7400,
+        signal-orange-900: #E68B00,
+        signal-orange-800-primary: #FF9B00,
+        signal-orange-700: #FEA925,
+        signal-orange-600: #FDB547,
+        signal-orange-500: #FCC167,
+        signal-orange-400-secondary: #FBCD87,
+        signal-orange-300: #FADAA9,
+        signal-orange-200-tertiary: #F9E6CB,
+        signal-orange-100: #F7F2EB,
+        signal-red-1000: #800712,
+        signal-red-900: #A60918,
+        signal-red-800-primary: #DA0C1F,
+        signal-red-700: #DF2F3F,
+        signal-red-600: #E34F5C,
+        signal-red-500: #E76E79,
+        signal-red-400-secondary: #EB8C95,
+        signal-red-300: #EFACB2,
+        signal-red-200-tertiary: #F3CCD0,
+        signal-red-100: #F7EBEF,
+        purple-1000: #790092,
+        purple-900: #8700A3,
+        purple-800-primary: #9600B4,
+        purple-700: #A400C5,
+        purple-600: #B600DA,
+        purple-500: #BE1BDE,
+        purple-400-secondary: #C944E3,
+        purple-300: #D673EA,
+        purple-200-tertiary: #E3A3EF,
+        purple-100: #F1D6F6,
+        blue-1000: #03477D,
+        blue-900: #0F5F9F,
+        blue-800-primary: #1873BB,
+        blue-700: #268DE0,
+        blue-600: #30A2FE,
+        blue-500: #4FB0FD,
+        blue-400-secondary: #66B9FC,
+        blue-300: #8BC9FB,
+        blue-200-tertiary: #A9D6FA,
+        blue-100: #CCE5F9,
+        mint-1000: #0D6042,
+        mint-900: #0F7C55,
+        mint-800-primary: #109365,
+        mint-700: #11A872,
+        mint-600: #16BE83,
+        mint-500: #38CA97,
+        mint-400-secondary: #5CD6AB,
+        mint-300: #7EE2BF,
+        mint-200-tertiary: #9FEDD1,
+        mint-100: #C5FAE8,
+        violet-1000: #390185,
+        violet-900: #4A0BA0,
+        violet-800-primary: #5915B8,
+        violet-700: #691ED0,
+        violet-600: #7727E7,
+        violet-500: #803AE3,
+        violet-400-secondary: #A36CF0,
+        violet-300: #BB93F4,
+        violet-200-tertiary: #D2B6FA,
+        violet-100: #ECDFFF,
+        lime-1000: #577903,
+        lime-900: #6C9506,
+        lime-800-primary: #7FAF08,
+        lime-700: #8FC409,
+        lime-600: #A2DD0E,
+        lime-500: #AFE230,
+        lime-400-secondary: #C1E85E,
+        lime-300: #CEED82,
+        lime-200-tertiary: #DDF2A8,
+        lime-100: #EEF9D3,
+        aqua-1000: #226F78,
+        aqua-900: #2B8A91,
+        aqua-800-primary: #349CA0,
+        aqua-700: #37B4BA,
+        aqua-600: #3CC0C9,
+        aqua-500: #3BD8DD,
+        aqua-400-secondary: #41E0E6,
+        aqua-300: #72FAFF,
+        aqua-200-tertiary: #A6FEFC,
+        aqua-100: #E2F7F7,
+);
+
+$vwag-grid-columns: 12;
+
+$vwag-breakpoints: (
+        xs: (
+                breakpoint: 0,
+                gutter: var(--groupui-vwag-gutter-xs, var(--groupui-vwag-gutter, toRem(8))),
+                offset: var(--groupui-vwag-offset-xs, 0),
+                flexibleDefaultMargin: toRem(16),
+                customMargin: var(--groupui-vwag-grid-margin-xs, var(--groupui-vwag-grid-margin, toRem(16))),
+        ),
+        s: (
+                breakpoint: 320px,
+                gutter: var(--groupui-vwag-gutter-s, var(--groupui-vwag-gutter, toRem(8))),
+                offset: var(--groupui-vwag-offset-s, 0),
+                flexibleDefaultMargin: toRem(16),
+                customMargin:var(--groupui-vwag-grid-margin-s, var(--groupui-vwag-grid-margin, toRem(16))),
+        ),
+        m: (
+                breakpoint: 560px,
+                gutter: var(--groupui-vwag-gutter-m, var(--groupui-vwag-gutter, toRem(12))),
+                offset: var(--groupui-vwag-offset-m, 0),
+                flexibleDefaultMargin: toRem(24),
+                customMargin: var(--groupui-vwag-grid-margin-m, var(--groupui-vwag-grid-margin, toRem(24))),
+        ),
+        l: (
+                breakpoint: 960px,
+                gutter: var(--groupui-vwag-gutter-l, var(--groupui-vwag-gutter, toRem(12))),
+                offset: var(--groupui-vwag-offset-l, 0),
+                flexibleDefaultMargin: toRem(48),
+                customMargin:var(--groupui-vwag-grid-margin-l, var(--groupui-vwag-grid-margin, toRem(48))),
+        ),
+        xl: (
+                breakpoint: 1280px,
+                gutter: var(--groupui-vwag-gutter-xl, var(--groupui-vwag-gutter, toRem(12))),
+                offset: var(--groupui-vwag-offset-xl, 0),
+                flexibleDefaultMargin: toRem(72),
+                customMargin: var(--groupui-vwag-grid-margin-xl, var(--groupui-vwag-grid-margin, toRem(72))),
+        ),
+        xxl: (
+                breakpoint: 1620px,
+                gutter: var(--groupui-vwag-gutter-xxl, var(--groupui-vwag-gutter, toRem(16))),
+                offset: var(--groupui-vwag-offset-xxl, 0),
+                flexibleDefaultMargin: toRem(96),
+                customMargin: var(--groupui-vwag-grid-margin-xxl, var(--groupui-vwag-grid-margin, toRem(96)))
+        )
+);
+
+$vwag-fixed-widths: (
+        xs: 100%,
+        s: 100%,
+        m: 100%,
+        l: 960px,
+        xl: 1200px,
+        xxl: 1620px,
+);
+
+// Shorthand function to get values from vwag-vars and vwag-spacings
+@function vwag($varName) {
+  @if (map-has-key($vwag-vars, $varName)) {
+    @return map-get($vwag-vars, $varName);
+  } @else if (map-has-key($vwag-spacings, $varName)) {
+    @return map-get($vwag-spacings, $varName);
+  } @else if (map-has-key($vwag-elevations, $varName)) {
+    @return map-get($vwag-elevations, $varName);
+  } @else if (map-has-key($vwag-font-sizes, $varName)) {
+    @return map-get($vwag-font-sizes, $varName);
+  } @else {
+    @error 'Variable ' + $varName + ' not found';
+  }
+}
+
+// Shorthand function to get values from vwag-colors
+@function vwag-color($colorName) {
+  @if (map-has-key($vwag-colors, $colorName)) {
+    @return map-get($vwag-colors, $colorName);
+  } @else {
+    @error 'Variable ' + $colorName + ' not found';
+  }
+}

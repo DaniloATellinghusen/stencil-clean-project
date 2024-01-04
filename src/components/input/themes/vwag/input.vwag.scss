@@ -1,0 +1,245 @@
+@import './input.vwag.common';
+
+:host {
+  ::slotted([slot='label']) {
+    color: vwag-color(grey-1000);
+  }
+
+  input {
+    $fontSize: toRem(16);
+    $paddingTop: vwag(spacing-3);
+    height: $fontSize * vwag(line-height) + $paddingTop * 2;
+    font-size: $fontSize;
+    background: vwag-color(white);
+    border: vwag(border) vwag-color(grey-400-secondary);
+    color: vwag-color(grey-800-primary);
+    padding: ($paddingTop - vwag(border-width)) (vwag(spacing-4) - vwag(border-width));
+
+    &::placeholder {
+      color: vwag-color(grey-400-secondary);
+    }
+  }
+
+  ::slotted([slot='description']),
+  #typing-info {
+    color: vwag-color(grey-1000);
+  }
+
+  #info {
+    display: flex;
+    align-items: flex-start;
+    gap: vwag(spacing-7);
+    margin-top: vwag(spacing-2);
+  }
+}
+
+:host(:not([disabled=''])) {
+  input {
+    &:hover,
+    &:focus {
+      border-color: vwag-color(petrol-800-primary);
+    }
+
+    &:focus {
+      @include vwag-focus-thicker-border();
+    }
+  }
+}
+
+:host {
+  #input-wrapper > groupui-icon.icon {
+    color: vwag-color(petrol-800-primary);
+  }
+
+  #input-wrapper > groupui-icon.status-icon {
+    color: vwag-color(petrol-800-primary);
+  }
+}
+
+:host([disabled='']),
+:host([readonly='']) {
+  input {
+    background-color: vwag-color(grey-100);
+    border-color: vwag-color(grey-400-secondary);
+  }
+}
+
+:host([disabled='']) {
+  ::slotted(*),
+  #typing-info {
+    color: vwag-color(grey-400-secondary);
+  }
+
+  input {
+    color: vwag-color(grey-400-secondary);
+  }
+}
+
+:host(:not([disabled=''])[severity='success']) {
+  ::slotted([slot='description']) {
+    color: vwag-color(signal-green-800-primary);
+  }
+
+  input {
+    border-color: vwag-color(signal-green-800-primary);
+
+    &:focus {
+      @include vwag-focus-thicker-border(0 0 0 0, vwag-color(signal-green-800-primary));
+    }
+  }
+
+  #input-wrapper > groupui-icon.status-icon {
+    color: vwag-color(signal-green-800-primary);
+  }
+}
+
+:host(:not([disabled=''])[severity='warning']) {
+  ::slotted([slot='description']) {
+    color: vwag-color(signal-orange-800-primary);
+  }
+
+  input {
+    border-color: vwag-color(signal-orange-800-primary);
+
+    &:focus {
+      @include vwag-focus-thicker-border(0 0 0 0, vwag-color(signal-orange-800-primary));
+    }
+  }
+
+  #input-wrapper > groupui-icon.status-icon {
+    color: vwag-color(signal-orange-800-primary);
+  }
+}
+
+:host(:not([disabled=''])[severity='danger']) {
+  ::slotted([slot='description']) {
+    color: vwag-color(signal-red-800-primary);
+  }
+
+  input {
+    border-color: vwag-color(signal-red-800-primary);
+
+    &:focus {
+      @include vwag-focus-thicker-border(0 0 0 0, vwag-color(signal-red-800-primary));
+    }
+  }
+
+  #input-wrapper > groupui-icon.status-icon {
+    color: vwag-color(signal-red-800-primary);
+  }
+}
+
+:host([inverted='']) {
+  ::slotted([slot='label']),
+  ::slotted([slot='description']) {
+    color: vwag-color(white);
+  }
+
+  input {
+    background-color: vwag-color(petrol-1000);
+    color: vwag-color(white);
+    border-color: rgba(vwag-color(white), 0.6);
+
+    &:hover {
+      border-color: vwag-color(white);
+    }
+
+    &:focus {
+      border-color: vwag-color(white);
+      box-shadow: 0 0 0 toRem(1) vwag-color(white), 0 0 0 0;
+    }
+  }
+}
+
+:host([inverted='']),
+:host([inverted=''][disabled='']) {
+  input {
+    background-color: vwag-color(petrol-800-primary);
+    color: vwag-color(petrol-300);
+    border-color: vwag-color(petrol-300);
+  }
+}
+
+:host(:not([disabled=''])[inverted=''][severity='success']) {
+  ::slotted([slot='label']) {
+    color: vwag-color(white);
+  }
+
+  ::slotted([slot='description']) {
+    color: vwag-color(signal-green-700);
+  }
+
+  input {
+    border-color: vwag-color(signal-green-700);
+
+    &:focus {
+      box-shadow: 0 0 0 toRem(1) vwag-color(signal-green-700), 0 0 0 0;
+    }
+  }
+}
+
+:host(:not([disabled=''])[inverted=''][severity='warning']) {
+  ::slotted([slot='label']) {
+    color: vwag-color(white);
+  }
+
+  ::slotted([slot='description']) {
+    color: vwag-color(signal-orange-800-primary);
+  }
+
+  input {
+    border-color: vwag-color(signal-orange-800-primary);
+
+    &:focus {
+      box-shadow: 0 0 0 toRem(1) vwag-color(signal-orange-800-primary), 0 0 0 0;
+    }
+  }
+}
+
+:host(:not([disabled=''])[inverted=''][severity='danger']) {
+  ::slotted([slot='label']) {
+    color: vwag-color(white);
+  }
+
+  ::slotted([slot='description']) {
+    color: vwag-color(signal-red-400-secondary);
+  }
+
+  input {
+    border-color: vwag-color(signal-red-400-secondary);
+
+    &:focus {
+      box-shadow: 0 0 0 toRem(1) vwag-color(signal-red-400-secondary), 0 0 0 0;
+    }
+  }
+}
+
+:host {
+  #input-wrapper > groupui-icon {
+    color: vwag-color(petrol-800-primary);
+  }
+}
+
+:host([inverted='']) {
+  #input-wrapper > groupui-icon.icon {
+    color: vwag-color(white);
+  }
+}
+
+:host([disabled='']) {
+  #input-wrapper > groupui-icon.icon {
+    color: vwag-color(grey-400-secondary);
+  }
+}
+
+:host([readonly='']) {
+  #input-wrapper > groupui-icon.icon {
+    color: vwag-color(grey-800-primary);
+  }
+}
+
+:host([disabled='']) {
+  input::placeholder {
+    color: transparent;
+  }
+}

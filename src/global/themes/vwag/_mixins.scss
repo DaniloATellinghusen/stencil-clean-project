@@ -1,0 +1,270 @@
+@import 'shared-mixins';
+
+@mixin vwag-button-primary {
+  @include common-vwag-button-primary;
+  color: vwag-color(white);
+  background: vwag-color(petrol-800-primary);
+  border: vwag(border) vwag-color(petrol-800-primary);
+
+  &:hover {
+    background: vwag-color(petrol-900);
+    border-color: vwag-color(petrol-900);
+  }
+
+  &:focus-visible {
+    @include vwag-outline;
+  }
+
+  &:active {
+    background: vwag-color(petrol-1000);
+    border-color: vwag-color(petrol-1000);
+  }
+}
+
+@mixin vwag-button-primary-danger {
+  @include common-vwag-button-primary-danger;
+  color: vwag-color(white);
+  background: vwag-color(signal-red-800-primary);
+  border: vwag(border) vwag-color(signal-red-800-primary);
+
+  &:hover {
+    background: vwag-color(signal-red-900);
+    border-color: vwag-color(signal-red-900);
+  }
+
+  &:focus-visible {
+    @include vwag-outline(vwag-color(signal-red-800-primary));
+  }
+
+  &:active {
+    background: vwag-color(signal-red-1000);
+    border-color: vwag-color(signal-red-1000);
+  }
+}
+
+@mixin vwag-button-primary-success {
+  @include common-vwag-button-primary-success;
+  color: vwag-color(white);
+  background: vwag-color(signal-green-800-primary);
+  border: vwag(border) vwag-color(signal-green-800-primary);
+
+  &:hover {
+    background: vwag-color(signal-green-900);
+    border-color: vwag-color(signal-green-900);
+  }
+
+  &:focus-visible {
+    @include vwag-outline(vwag-color(signal-green-800-primary));
+  }
+
+  &:active {
+    background: vwag-color(signal-green-1000);
+    border-color: vwag-color(signal-green-1000);
+  }
+}
+
+@mixin vwag-button-primary-warning {
+  @include common-vwag-button-primary-warning;
+  color: vwag-color(white);
+  background: vwag-color(signal-orange-800-primary);
+  border: vwag(border) vwag-color(signal-orange-800-primary);
+
+  &:hover {
+    background: vwag-color(signal-orange-900);
+    border-color: vwag-color(signal-orange-900);
+  }
+
+  &:focus-visible {
+    @include vwag-outline(vwag-color(signal-orange-800-primary));
+  }
+
+  &:active {
+    background: vwag-color(signal-orange-1000);
+    border-color: vwag-color(signal-orange-1000);
+  }
+}
+
+@mixin vwag-button-secondary {
+  @include common-vwag-button-secondary;
+  @include vwag-button-tertiary;
+
+  border: vwag(border) vwag-color(petrol-800-primary);
+  &:hover,
+  &:active {
+    border-color: vwag-color(petrol-800-primary);
+  }
+}
+
+@mixin vwag-button-secondary-danger {
+  @include common-vwag-button-secondary-danger;
+  background: transparent;
+  color: vwag-color(signal-red-800-primary);
+  border: vwag(border) vwag-color(signal-red-800-primary);
+
+  &:hover {
+    border-color: vwag-color(signal-red-800-primary);
+    background: rgba(vwag-color(signal-red-800-primary), 0.1);
+  }
+
+  &:active {
+    background: rgba(vwag-color(signal-red-800-primary), 0.2);
+  }
+}
+
+@mixin vwag-button-secondary-success {
+  @include common-vwag-button-secondary-success;
+  background: transparent;
+  color: vwag-color(signal-green-800-primary);
+  border: vwag(border) vwag-color(signal-green-800-primary);
+
+  &:hover {
+    border-color: vwag-color(signal-green-800-primary);
+    background: rgba(vwag-color(signal-green-800-primary), 0.1);
+  }
+
+  &:active {
+    background: rgba(vwag-color(signal-green-800-primary), 0.2);
+  }
+}
+
+@mixin vwag-button-secondary-warning {
+  @include common-vwag-button-secondary-warning;
+  background: transparent;
+  color: vwag-color(signal-orange-800-primary);
+  border: vwag(border) vwag-color(signal-orange-800-primary);
+
+  &:hover {
+    border-color: vwag-color(signal-orange-800-primary);
+    background: rgba(vwag-color(signal-orange-800-primary), 0.1);
+  }
+
+  &:active {
+    background: rgba(vwag-color(signal-orange-800-primary), 0.2);
+  }
+}
+
+@mixin vwag-button-tertiary {
+  @include common-vwag-button-tertiary;
+  background: transparent;
+  border: vwag(border) transparent;
+  color: vwag-color(petrol-800-primary);
+
+  &:hover {
+    background: rgba(vwag-color(petrol-800-primary), 0.1);
+  }
+
+  &:active {
+    background: rgba(vwag-color(petrol-800-primary), 0.2);
+  }
+}
+
+@mixin vwag-button-tertiary-danger {
+  @include common-vwag-button-tertiary-danger;
+  background: transparent;
+  border: vwag(border) transparent;
+  color: vwag-color(signal-red-800-primary);
+
+  &:hover {
+    background: rgba(vwag-color(signal-red-800-primary), 0.1);
+  }
+
+  &:active {
+    background: rgba(vwag-color(signal-red-800-primary), 0.2);
+  }
+}
+
+@mixin vwag-button-tertiary-success {
+  @include common-vwag-button-tertiary-danger;
+  background: transparent;
+  border: vwag(border) transparent;
+  color: vwag-color(signal-green-800-primary);
+
+  &:hover {
+    background: rgba(vwag-color(signal-green-800-primary), 0.1);
+  }
+
+  &:active {
+    background: rgba(vwag-color(signal-green-800-primary), 0.2);
+  }
+}
+
+@mixin vwag-button-tertiary-warning {
+  @include common-vwag-button-tertiary-warning;
+  background: transparent;
+  border: vwag(border) transparent;
+  color: vwag-color(signal-orange-800-primary);
+
+  &:hover {
+    background: rgba(vwag-color(signal-orange-800-primary), 0.1);
+  }
+
+  &:active {
+    background: rgba(vwag-color(signal-orange-800-primary), 0.2);
+  }
+}
+
+@mixin vwag-button-inverted {
+  @include common-vwag-button-inverted;
+  background-color: vwag-color(white);
+  color: vwag-color(petrol-800-primary);
+  border-color: vwag-color(white);
+
+  &:hover {
+    background: rgba(vwag-color(white), 0.9);
+    border-color: transparent;
+  }
+
+  &:active {
+    background: rgba(vwag-color(white), 0.8);
+    border-color: transparent;
+  }
+
+  &:focus-visible {
+    @include vwag-outline(vwag-color(white));
+  }
+}
+
+@mixin vwag-button-inverted-tertiary {
+  @include common-vwag-button-inverted-tertiary;
+  background: transparent;
+  border-color: transparent;
+  color: vwag-color(white);
+
+  &:hover {
+    background: rgba(vwag-color(black), 0.1);
+    border-color: transparent;
+  }
+
+  &:active {
+    background: rgba(vwag-color(black), 0.2);
+    border-color: transparent;
+  }
+}
+
+@mixin vwag-button-inverted-secondary {
+  @include common-vwag-button-inverted-secondary;
+  background: transparent;
+  border: vwag(border) vwag-color(white);
+  color: vwag-color(white);
+
+  &:hover {
+    background: rgba(vwag-color(black), 0.1);
+  }
+
+  &:active {
+    background: rgba(vwag-color(black), 0.2);
+  }
+}
+
+@mixin vwag-focus-double-line($additionalShadow: 0 0 0 0) {
+  box-shadow: 0 0 0 toRem(2) vwag-color(white), 0 0 0 toRem(4) vwag-color(petrol-800-primary), $additionalShadow;
+}
+
+@mixin vwag-focus-thicker-border($additionalShadow: 0 0 0 0, $color: vwag-color(petrol-800-primary)) {
+  box-shadow: 0 0 0 toRem(1) $color, $additionalShadow;
+}
+
+@mixin vwag-outline($color: vwag-color(petrol-800-primary)) {
+  outline: $color solid toRem(2);
+  outline-offset: toRem(2);
+}
