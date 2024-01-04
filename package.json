@@ -1,6 +1,6 @@
 {
   "name": "@my-stencil-project/my-stencil-project",
-  "version": "1.0.0-11",
+  "version": "1.0.0-26",
   "description": "A web stencil test project",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -11,7 +11,8 @@
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/my-stencil-project/my-stencil-project.js",
   "files": [
-    "dist/"
+    "dist/",
+    "loader/"
   ],
   "scripts": {
     "build": "npm run generate-themes-css && stencil build --docs --es5",
@@ -53,7 +54,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@my-stencil-project/my-stencil-project": "./my-stencil-project-my-stencil-project-1.0.0-9.tgz",
     "@stencil/core": "^3.3.1"
   }
 }

@@ -5,15 +5,15 @@ import { angularOutputTarget, ValueAccessorConfig } from '@stencil/angular-outpu
 const angularValueAccessorBindings: ValueAccessorConfig[] = [
   {
     elementSelectors: [
-      'groupui-input[type=text]',
-      'groupui-input[type=password]',
-      'groupui-input[type=date]',
-      'groupui-input[type=datetime-local]',
-      'groupui-input[type=email]',
-      'groupui-input[type=month]',
-      'groupui-input[type=tel]',
-      'groupui-input[type=time]',
-      'groupui-input[type=url]',
+      'my-input[type=text]',
+      'my-input[type=password]',
+      'my-input[type=date]',
+      'my-input[type=datetime-local]',
+      'my-input[type=email]',
+      'my-input[type=month]',
+      'my-input[type=tel]',
+      'my-input[type=time]',
+      'my-input[type=url]',
     ],
     event: 'input',
     targetAttr: 'value',
@@ -21,7 +21,7 @@ const angularValueAccessorBindings: ValueAccessorConfig[] = [
   },
 
   {
-    elementSelectors: ['groupui-input[type=number]'],
+    elementSelectors: ['my-input[type=number]'],
     event: 'input',
     targetAttr: 'value',
     type: 'number',
@@ -57,7 +57,8 @@ export const config: Config = {
   },
   outputTargets: [
     {
-      type: 'dist'
+      type: 'dist',
+      esmLoaderPath: '../loader'
     },
     angularOutputTarget({
       componentCorePackage: '@my-stencil-project/my-stencil-project',
@@ -85,8 +86,6 @@ export const config: Config = {
     sass({
       injectGlobalPaths: [
         'src/global/functions.scss',
-        'src/global/themes/vwag/_variables.scss',
-        'src/global/themes/vwag/_mixins.scss',
       ],
     }),
   ],

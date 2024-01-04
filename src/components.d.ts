@@ -7,65 +7,46 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     /**
+     * @nativeEvent click  - dispatched when button was clicked
+     */
+    interface MyButton {
+        /**
+          * deactivates the button
+         */
+        "disabled": boolean;
+        /**
+          * optionally specifies the new filename for the downloaded file if a url is specified.
+         */
+        "download": string;
+        /**
+          * icon name e.g. 'clock-24'. Use the following matching icon sizes for the different button sizes: s: 16px m: 24px l: 32px
+         */
+        "icon": string;
+        /**
+          * value of the button. This is the value that will be submitted if the button is placed inside a form.
+         */
+        "value": string;
+    }
+    /**
      * @nativeEvent click - dispatched when input was clicked => 'event.target.value' delivers the current value
      * @nativeEvent change - dispatched when input has changed => 'event.target.value' delivers the current value
      * @nativeEvent invalid - dispatched when input is invalid => 'event.target.value' delivers the invalid value
      */
-    interface GroupuiInput {
-        /**
-          * sets focus automatically
-         */
-        "autofocus": boolean;
+    interface MyInput {
         /**
           * determines which brand to use.
          */
         "brand": string;
         /**
-          * shows the description only when the component has focus
-         */
-        "descriptionOnlyOnFocus": boolean;
-        /**
           * sets input-field to readonly
          */
         "disabled": boolean;
-        /**
-          * determines whether maxlength should prevent input of any more characters (html default behavior)
-         */
-        "htmlMaxlengthBehavior": boolean;
-        /**
-          * color of the icon
-         */
-        "iconColor": string;
-        /**
-          * maximum value to accept for this input. To be used with type=number
-         */
-        "max": number | string;
-        /**
-          * sets the maximum amount of characters of the input-field
-         */
-        "maxlength": number;
-        /**
-          * minimum value to accept for this input. To be used with type=number
-         */
-        "min": number | string;
-        /**
-          * sets the minimum amount of characters of the input-field
-         */
-        "minlength": number;
         /**
           * name of the input element to support forms
          */
         "name": string;
         /**
-          * disable internal validation
-         */
-        "noValidation": boolean;
-        /**
-          * a pattern which will be covered by validity
-         */
-        "pattern": string;
-        /**
-          * placeholder of the input-field<br> ❗❗ applicable only to: VWAG
+          * placeholder of the input-field<br>
          */
         "placeholder": string;
         /**
@@ -73,141 +54,83 @@ export namespace Components {
          */
         "readonly": boolean;
         /**
-          * specifies that an input must be filled out before submitting the form
-         */
-        "required": boolean;
-        /**
-          * style attribute
-         */
-        "severity": any;
-        /**
-          * show clear icon to clear the input field
-         */
-        "showClearIcon": boolean;
-        /**
-          * show status icon on severity danger, warning, success
-         */
-        "showStatusIcon": boolean;
-        /**
           * specifies the type of input element
          */
         "type": string;
-        /**
-          * a string with placeholder about count of available and used characters. Works only  in combination with maxlength. Possible values:  {characters-used}  {characters-left}  {characters-max} e.g.:    '{characters-used} characters used'    '{characters-left} characters left'    '{characters-used}/{characters-max}'
-         */
-        "typingInfoTemplate": string;
-        /**
-          * function to trigger component validation manually
-         */
-        "validate": () => Promise<void>;
-        /**
-          * returns the element's current validityState state (readonly value)
-          * @deprecated use the validity state returned in `groupuiInvalid` event
-         */
-        "validity": ValidityState;
         /**
           * value of the input-field
          */
         "value": string;
     }
 }
-export interface GroupuiInputCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLGroupuiInputElement;
-}
 declare global {
+    /**
+     * @nativeEvent click  - dispatched when button was clicked
+     */
+    interface HTMLMyButtonElement extends Components.MyButton, HTMLStencilElement {
+    }
+    var HTMLMyButtonElement: {
+        prototype: HTMLMyButtonElement;
+        new (): HTMLMyButtonElement;
+    };
     /**
      * @nativeEvent click - dispatched when input was clicked => 'event.target.value' delivers the current value
      * @nativeEvent change - dispatched when input has changed => 'event.target.value' delivers the current value
      * @nativeEvent invalid - dispatched when input is invalid => 'event.target.value' delivers the invalid value
      */
-    interface HTMLGroupuiInputElement extends Components.GroupuiInput, HTMLStencilElement {
+    interface HTMLMyInputElement extends Components.MyInput, HTMLStencilElement {
     }
-    var HTMLGroupuiInputElement: {
-        prototype: HTMLGroupuiInputElement;
-        new (): HTMLGroupuiInputElement;
+    var HTMLMyInputElement: {
+        prototype: HTMLMyInputElement;
+        new (): HTMLMyInputElement;
     };
     interface HTMLElementTagNameMap {
-        "groupui-input": HTMLGroupuiInputElement;
+        "my-button": HTMLMyButtonElement;
+        "my-input": HTMLMyInputElement;
     }
 }
 declare namespace LocalJSX {
     /**
+     * @nativeEvent click  - dispatched when button was clicked
+     */
+    interface MyButton {
+        /**
+          * deactivates the button
+         */
+        "disabled"?: boolean;
+        /**
+          * optionally specifies the new filename for the downloaded file if a url is specified.
+         */
+        "download"?: string;
+        /**
+          * icon name e.g. 'clock-24'. Use the following matching icon sizes for the different button sizes: s: 16px m: 24px l: 32px
+         */
+        "icon"?: string;
+        /**
+          * value of the button. This is the value that will be submitted if the button is placed inside a form.
+         */
+        "value"?: string;
+    }
+    /**
      * @nativeEvent click - dispatched when input was clicked => 'event.target.value' delivers the current value
      * @nativeEvent change - dispatched when input has changed => 'event.target.value' delivers the current value
      * @nativeEvent invalid - dispatched when input is invalid => 'event.target.value' delivers the invalid value
      */
-    interface GroupuiInput {
-        /**
-          * sets focus automatically
-         */
-        "autofocus"?: boolean;
+    interface MyInput {
         /**
           * determines which brand to use.
          */
         "brand"?: string;
         /**
-          * shows the description only when the component has focus
-         */
-        "descriptionOnlyOnFocus"?: boolean;
-        /**
           * sets input-field to readonly
          */
         "disabled"?: boolean;
-        /**
-          * determines whether maxlength should prevent input of any more characters (html default behavior)
-         */
-        "htmlMaxlengthBehavior"?: boolean;
-        /**
-          * color of the icon
-         */
-        "iconColor"?: string;
-        /**
-          * maximum value to accept for this input. To be used with type=number
-         */
-        "max"?: number | string;
-        /**
-          * sets the maximum amount of characters of the input-field
-         */
-        "maxlength"?: number;
-        /**
-          * minimum value to accept for this input. To be used with type=number
-         */
-        "min"?: number | string;
-        /**
-          * sets the minimum amount of characters of the input-field
-         */
-        "minlength"?: number;
         /**
           * name of the input element to support forms
          */
         "name"?: string;
         /**
-          * disable internal validation
-         */
-        "noValidation"?: boolean;
-        /**
-          * for react user only - use this instead of the native change event
-         */
-        "onGroupuiChange"?: (event: GroupuiInputCustomEvent<void>) => void;
-        /**
-          * is dispatched if the clear icon is clicked
-         */
-        "onGroupuiClearClicked"?: (event: GroupuiInputCustomEvent<void>) => void;
-        /**
-          * dispatched when component finished loading
-         */
-        "onGroupuiDidLoad"?: (event: GroupuiInputCustomEvent<void>) => void;
-        /**
-          * is dispatched when the value is invalid
-         */
-        "onGroupuiInvalid"?: (event: GroupuiInputCustomEvent<ValidityState>) => void;
-        /**
-          * a pattern which will be covered by validity
-         */
-        "pattern"?: string;
-        /**
-          * placeholder of the input-field<br> ❗❗ applicable only to: VWAG
+          * placeholder of the input-field<br>
          */
         "placeholder"?: string;
         /**
@@ -215,41 +138,17 @@ declare namespace LocalJSX {
          */
         "readonly"?: boolean;
         /**
-          * specifies that an input must be filled out before submitting the form
-         */
-        "required"?: boolean;
-        /**
-          * style attribute
-         */
-        "severity"?: any;
-        /**
-          * show clear icon to clear the input field
-         */
-        "showClearIcon"?: boolean;
-        /**
-          * show status icon on severity danger, warning, success
-         */
-        "showStatusIcon"?: boolean;
-        /**
           * specifies the type of input element
          */
         "type"?: string;
-        /**
-          * a string with placeholder about count of available and used characters. Works only  in combination with maxlength. Possible values:  {characters-used}  {characters-left}  {characters-max} e.g.:    '{characters-used} characters used'    '{characters-left} characters left'    '{characters-used}/{characters-max}'
-         */
-        "typingInfoTemplate"?: string;
-        /**
-          * returns the element's current validityState state (readonly value)
-          * @deprecated use the validity state returned in `groupuiInvalid` event
-         */
-        "validity"?: ValidityState;
         /**
           * value of the input-field
          */
         "value"?: string;
     }
     interface IntrinsicElements {
-        "groupui-input": GroupuiInput;
+        "my-button": MyButton;
+        "my-input": MyInput;
     }
 }
 export { LocalJSX as JSX };
@@ -257,11 +156,15 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             /**
+             * @nativeEvent click  - dispatched when button was clicked
+             */
+            "my-button": LocalJSX.MyButton & JSXBase.HTMLAttributes<HTMLMyButtonElement>;
+            /**
              * @nativeEvent click - dispatched when input was clicked => 'event.target.value' delivers the current value
              * @nativeEvent change - dispatched when input has changed => 'event.target.value' delivers the current value
              * @nativeEvent invalid - dispatched when input is invalid => 'event.target.value' delivers the invalid value
              */
-            "groupui-input": LocalJSX.GroupuiInput & JSXBase.HTMLAttributes<HTMLGroupuiInputElement>;
+            "my-input": LocalJSX.MyInput & JSXBase.HTMLAttributes<HTMLMyInputElement>;
         }
     }
 }

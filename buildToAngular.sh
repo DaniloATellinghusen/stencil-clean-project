@@ -11,11 +11,6 @@ else
     testingIndexContent='';
 fi
 
-# Remove previous angular test project if exists
-echo "cleanup existing angular testApp...";
-{ rm -rf "./angular/testApp" || true; } >/dev/null 2>&1;
-printf "done!\n"
-
 # Create local package
 npm run build.local;
 
@@ -29,3 +24,12 @@ npm version prerelease --git-tag-version false
 npm pkg set dependencies."@my-stencil-project/my-stencil-project"="./my-stencil-project-my-stencil-project-$pkgV.tgz"
 npm install
 npm run build.local;
+
+# Move angular package to AngularProjectDemo
+pkgNgV=$(npm version | grep "'@my-stencil-project/my-stencil-project-angular': " | cut -d "'" -f 4);
+mv "my-stencil-project-my-stencil-project-angular-$pkgNgV.tgz" ../AngularProjectDemo;
+cd ../AngularProjectDemo || return;
+
+npm version prerelease --git-tag-version false
+npm pkg set dependencies."@my-stencil-project/my-stencil-project-angular"="./my-stencil-project-my-stencil-project-angular-$pkgNgV.tgz"
+npm install

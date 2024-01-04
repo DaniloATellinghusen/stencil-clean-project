@@ -5,4 +5,4 @@ export * from './directives/select-value-accessor';
 export * from './directives/boolean-value-accessor';
 
 // PACKAGE MODULE
-export { GroupUiModule } from './group-ui.module';
+export { MyStencilProjectModule } from './my-stencil-project.module';

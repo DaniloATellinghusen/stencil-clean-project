@@ -1,9 +1,0 @@
-.stencil-loading-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 6px;
-    width: 100%;
-    background-color: black;
-    z-index: 999999999999
-}
