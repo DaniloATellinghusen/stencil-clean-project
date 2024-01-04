@@ -1,6 +1,6 @@
 {
-  "name": "@my-stencil-project",
-  "version": "1.0.0-1",
+  "name": "@my-stencil-project/my-stencil-project",
+  "version": "1.0.0-11",
   "description": "A web stencil test project",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -11,8 +11,7 @@
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/my-stencil-project/my-stencil-project.js",
   "files": [
-    "dist/",
-    "loader/"
+    "dist/"
   ],
   "scripts": {
     "build": "npm run generate-themes-css && stencil build --docs --es5",
@@ -43,17 +42,18 @@
     "eslint": "^7.32.0",
     "lit-html": "^1.4.1",
     "mutation-observer": "^1.0.3",
+    "puppeteer": "^13.7.0",
     "replace": "^1.2.1",
     "rimraf": "^3.0.2",
     "sass": "^1.43.4",
     "showdown": "^2.1.0",
     "tree-kill": "1.2.2",
     "typescript": "4.4.4",
-    "puppeteer": "^13.7.0",
     "write-file-webpack-plugin": "^4.5.1"
   },
   "license": "MIT",
   "dependencies": {
+    "@my-stencil-project/my-stencil-project": "./my-stencil-project-my-stencil-project-1.0.0-9.tgz",
     "@stencil/core": "^3.3.1"
   }
 }

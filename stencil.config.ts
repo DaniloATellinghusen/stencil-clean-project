@@ -57,11 +57,10 @@ export const config: Config = {
   },
   outputTargets: [
     {
-      type: 'dist',
-      esmLoaderPath: '../loader',
+      type: 'dist'
     },
     angularOutputTarget({
-      componentCorePackage: '@my-stencil-project',
+      componentCorePackage: '@my-stencil-project/my-stencil-project',
       directivesProxyFile: './angular/src/directives/proxies.ts',
       directivesArrayFile: './angular/src/directives/index.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
