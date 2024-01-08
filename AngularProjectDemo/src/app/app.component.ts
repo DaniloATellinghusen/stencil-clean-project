@@ -8,14 +8,11 @@ import {MyInput} from "@my-stencil-project/my-stencil-project-angular";
 })
 
 export class AppComponent {
-  @ViewChild('input2') input2!: MyInput;
+  myVariable : string = "";
+
   constructor(private rd: Renderer2) {
 
   }
 
-  onInputChange(event: any) {
-    console.log(event);
-    this.input2.value = event.value;
-  }
 
 }

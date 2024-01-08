@@ -1,14 +1,14 @@
 <div style="display: flex; flex-direction: column; width: 600px">
-  <my-input #input (change)="onInputChange(input)"  >
+  <my-input #myInput >
     <span slot="label">Label</span>
     <span slot="description">Description</span>
   </my-input>
 
-  <my-input #input2>
+  <my-input #input2 [value]="myVariable" (input)="myVariable = myInput.value">
     <span slot="label">Label</span>
     <span slot="description">Description</span>
   </my-input>
 
-  <my-button brand="vwag">Button</my-button>
+  <my-button>Button</my-button>
 
 </div>
