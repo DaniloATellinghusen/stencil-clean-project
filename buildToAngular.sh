@@ -12,6 +12,7 @@ else
 fi
 
 # Create local package
+npm install;
 npm run build.local;
 
 # Move local package to angular directory
