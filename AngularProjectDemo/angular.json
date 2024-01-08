@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "groupUiAngularDemo": {
+    "angular-project-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -21,7 +21,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "preserveSymlinks": true,
-            "outputPath": "dist/group-ui-angular-demo",
+            "outputPath": "dist/my-angular-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -32,7 +32,7 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "./node_modules/@group-ui/group-ui-angular/node_modules/@group-ui/group-ui/dist/group-ui/assets",
+                "input": "./node_modules/@my-stencil-project/my-stencil-project-angular/node_modules/@my-stencil-project/my-stencil-project/dist/my-stencil-project/assets",
                 "output": "./assets/"
               }
             ],
@@ -78,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "groupUiAngularDemo:build:production"
+              "browserTarget": "angular-project-demo:build:production"
             },
             "development": {
-              "browserTarget": "groupUiAngularDemo:build:development"
+              "browserTarget": "angular-project-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "groupUiAngularDemo:build"
+            "browserTarget": "angular-project-demo:build"
           }
         },
         "test": {
